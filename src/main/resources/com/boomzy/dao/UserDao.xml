@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boomzy.dao.UserDao">
+    <resultMap id="userMap" type="com.boomzy.domain.User">
+        <id property="id" column="id"></id>
+        <result property="userName" column="user_name"></result>
+        <result property="realName" column="real_name"></result>
+        <result property="password" column="password"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <result property="province" column="province"></result>
+        <result property="city" column="city"></result>
+        <result property="userType" column="user_type"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="updateTime" column="update_time"></result>
+    </resultMap>
+
+    <select id="findInDarkHouse" parameterType="string" resultType="int">
+        select count(id)
+        from t_forum_dark_house
+        where dark_name = #{username}
+    </select>
+
+    <select id="login" parameterType="string" resultType="int">
+        select count(id)
+        from t_forum_user
+        where user_name = #{username}
+        and password = #{password}
+        and user_type = '01'
+    </select>
+
+    <insert id="register" parameterType="com.boomzy.domain.User">
+        insert
+        into t_forum_user(user_name, real_name, password, sex, email, province, city, user_type, create_time,
+        update_time)
+        values(#{userName}, #{realName}, #{password}, #{sex}, #{email},
+        #{province}, #{city}, #{userType}, #{createTime}, #{updateTime})
+    </insert>
+
+    <select id="queryUserNameCount" parameterType="string" resultType="int">
+        select count(id)
+        from t_forum_user
+        where user_name = #{userName}
+    </select>
+
+</mapper>
