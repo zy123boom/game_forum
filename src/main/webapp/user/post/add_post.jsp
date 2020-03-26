@@ -18,7 +18,7 @@
             }
         %>
         文章题目：<input type="text" name="postSubject" /><br/>
-        文章内容：<input type="text" name="postContent"/><br/>
+        文章内容：<textarea name="postContent" cols="30px" rows="20px"></textarea><br/>
         <input type="submit" value="提交"><br/>
         <a href="../../post/showPost?gameSectionName=<%=session.getAttribute("gameSectionName")%>">返回帖子列表</a>
     </form>

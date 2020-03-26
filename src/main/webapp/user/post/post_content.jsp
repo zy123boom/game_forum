@@ -48,7 +48,7 @@
         if (session.getAttribute("username") != "tourist") {
     %>
     <form action="../post/addComment?postContent=<%=session.getAttribute("postContent")%>&gameSectionName=<%=session.getAttribute("gameSectionName")%>" method="post">
-        <input type="text" name="commentContent" /><br/>
+        <textarea rows="25px" cols="50px" name="commentContent" ></textarea><br/>
         <input type="submit" value="发表新的评论"/><br/>
     </form>
     <%

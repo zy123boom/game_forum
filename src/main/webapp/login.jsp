@@ -4,12 +4,21 @@
 <html>
 <head>
     <title>游戏论坛登陆界面</title>
+    <style type="text/css">
+        body {
+            background-image: url(images/lol.jpg);
+            background-size:cover;
+        }
+    </style>
 </head>
 <body>
     <form action="user/login" method="post">
-        用户名：<input type="text" name="username"/><br/>
-        密码: <input type="password" name="password"/><br/>
-        <input type="submit" value="登录"><br/>
+        <fieldset>
+            <legend>用户登录</legend>
+            用户名：<input type="text" name="username"/><br/>
+            密码: <input type="password" name="password"/><br/>
+            <input type="submit" value="登录"><br/>
+        </fieldset>
     </form>
 
     <br/>
