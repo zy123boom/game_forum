@@ -1,0 +1,26 @@
+table {
+    width: 40%;
+    /*
+        居中
+     */
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+/*
+ * 设置隔行变色
+ */
+tr:nth-child(even) {
+    background-color: #bfa;
+}
+
+/*
+ * 鼠标移入到tr以后，改变颜色
+ */
+tr:hover {
+    background-color: #0CF;
+}
