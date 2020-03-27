@@ -9,71 +9,7 @@
 <html>
 <head>
     <title>游戏论坛用户注册</title>
-    <style type="text/css">
-        body {
-            margin: 0;
-            background-color: #fbfbfb;
-            text-align: center;
-        }
-
-        .login {
-            text-align: center;
-            margin: 60px 0 0 0;
-            font-size: 14px;
-        }
-
-        .login .login-wrapper {
-            -webkit-transition: all 1s;
-            -o-transition: all 1s;
-            transition: all 1s;
-            -webkit-perspective: 1000px;
-            perspective: 1000px;
-            position: relative;
-            height: 100%;
-            width: 360px;
-            margin: 0 auto;
-        }
-
-        .login .login-wrapper .login-box {
-            background-color: #fff;
-            -webkit-box-shadow: 0 7px 25px rgba(0, 0, 0, .08);
-            box-shadow: 0 7px 25px rgba(0, 0, 0, .08);
-            padding: 60px 25px 25px 25px;
-            text-align: left;
-            border-radius: 3px;
-        }
-
-        .login .login-box .login-group {
-            margin-bottom: 30px;
-        }
-
-        .login .login-box .login-input {
-            background-color: #f2f9fc;
-            color: cornflowerblue;
-            border: none;
-            border-radius: 3px;
-            padding: 10px 10px;
-            width: 100%;
-            outline: 0;
-        }
-        .login .login-box p{
-            color: cornflowerblue;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .login .login-box .login-submit {
-            background-color: skyblue;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            width: 100%;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            outline: 0;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
 <div class="login">
@@ -114,8 +50,12 @@
                 <div class="login-group">
                     <input type="submit" value="提交" class="login-submit"/>
                 </div>
+
+                <div class="text-foot">
+                    已有账号？<a href="/game_forum/login.jsp">去登陆吧</a>
+                </div>
             </form>
-            <a href="/game_forum/login.jsp">已有账号？去登陆吧</a>
+
         </div>
     </div>
 </div>

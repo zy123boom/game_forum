@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="login">
-    <div class="login-wrapper">
+    <div class="login-wrapper" style="min-height: 457px">
         <div class="login-box">
             <form action="user/login" method="post">
                 <p>欢迎登录游戏论坛</p>
@@ -21,13 +21,25 @@
                 <div class="login-group login-submit">
                     <input type="submit" value="登录" class="login-submit">
                 </div>
+
+                <div class="text-foot">
+                    <a href="tourist/login">游客登录</a>
+                </div>
+
+                <div class="text-foot">
+                    <a href="admin/login.jsp">管理员登录</a>
+                </div>
+
+                <div class="text-foot">
+                    还没有账号？<a href="register.jsp">去注册吧</a>
+                </div>
             </form>
         </div>
     </div>
 </div>
-    <div class="a1"><a href="tourist/login">游客登录</a></div>
 
-    <a href="admin/login.jsp">管理员登录</a><br/>
-    <a href="register.jsp">还没有账号？去注册吧</a><br/>
+
+
+
 </body>
 </html>
