@@ -9,12 +9,28 @@
 <html>
 <head>
     <title>管理员登录页面</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
-<body>
-    <form action="../admin/login" method="post">
-        用户名：<input type="text" name="username" /><br/>
-        密码：<input type="password" name="password" /><br/>
-        <input type="submit" value="登录"/><br/>
-    </form>
-</body>
+    <body>
+        <div class="login">
+            <div class="login-wrapper">
+                <div class="login-box">
+                    <form action="../admin/login" method="post">
+                        <p>欢迎登录游戏论坛</p>
+                        <div class="login-group">
+                            用户名：<input type="text" name="username" class="login-input"/>
+                        </div>
+
+                        <div class="login-group login-password">
+                            密码: <input type="password" name="password" class="login-input"/>
+                        </div>
+
+                        <div class="login-group login-submit">
+                            <input type="submit" value="登录" class="login-submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

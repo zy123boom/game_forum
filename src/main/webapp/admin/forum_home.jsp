@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>论坛主页面（管理员）</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
 </head>
 <body>
     欢迎你:<%=session.getAttribute("username")%>&nbsp;<a href="/game_forum/invalidate.jsp">注销</a><br/>
