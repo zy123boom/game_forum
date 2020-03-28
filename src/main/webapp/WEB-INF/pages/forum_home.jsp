@@ -14,8 +14,10 @@
         .top-white .logo {
             height: 100%;
             width: 30%;
+            font-size: 36px;
+            font-family: 隶书;
+            color: rgb(159,121,111);
             float: left;
-            background-image: url("../../images/logo.jpg");
         }
 
         .top-white .welcome {
@@ -24,7 +26,6 @@
             float: left;
             margin-left: 55%;
             color: #8cc6e5;
-            background-color: #bbffaa;
         }
 
         a:visited {
@@ -41,7 +42,9 @@
 <body>
 
     <div class="top-white">
-        <div class="top-white logo"></div>
+        <div class="top-white logo">
+            畅 游 之 家 游 戏 论 坛
+        </div>
         <div class="top-white welcome">
             欢迎您：<%=session.getAttribute("username")%>&nbsp;<a href="/game_forum/invalidate.jsp">注销</a>
         </div>
