@@ -45,7 +45,7 @@
     <br/>
     <br/>
     <%
-        if (session.getAttribute("username") != "tourist") {
+        if (!session.getAttribute("username").equals("tourist")) {
     %>
     <form action="../post/addComment?postContent=<%=session.getAttribute("postContent")%>&gameSectionName=<%=session.getAttribute("gameSectionName")%>" method="post">
         <textarea rows="25px" cols="50px" name="commentContent" ></textarea><br/>

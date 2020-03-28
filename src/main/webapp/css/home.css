@@ -1,6 +1,10 @@
 /*
     主页样式
  */
+a {
+    text-decoration: none;
+}
+
 .top-white {
     height: 80px;
     width: 100%;

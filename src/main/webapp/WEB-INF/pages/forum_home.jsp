@@ -5,6 +5,10 @@
 <head>
     <title>游戏论坛主页</title>
     <style type="text/css">
+        a {
+            text-decoration: none;
+        }
+
         .top-white {
             height: 80px;
             width: 100%;
@@ -95,6 +99,7 @@
             width: 10%;
             margin: 0 auto;
         }
+
     </style>
 </head>
 <body>
@@ -132,8 +137,9 @@
 
         </div>
     </div>
+
     <%
-        if (session.getAttribute("username") != "tourist") {
+        if (!session.getAttribute("username").equals("tourist")) {
     %>
     <div class="major-three">
         <div class="major-three opinion">

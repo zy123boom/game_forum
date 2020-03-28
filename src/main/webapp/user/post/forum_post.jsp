@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>板块讨论帖</title>
+    <link rel="stylesheet" type="text/css" href="../../css/table.css">
 </head>
 <body>
     <table border="1px">
@@ -40,7 +41,7 @@
     <br/>
 
     <%
-        if (session.getAttribute("username") != "tourist") {
+        if (!session.getAttribute("username").equals("tourist")) {
     %>
     <a href="../user/post/add_post.jsp">发表新帖</a><br/>
     <%
