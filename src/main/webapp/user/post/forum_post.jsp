@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>板块讨论帖</title>
-    <link rel="stylesheet" type="text/css" href="../../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
 </head>
 <body>
     <table border="1px">
