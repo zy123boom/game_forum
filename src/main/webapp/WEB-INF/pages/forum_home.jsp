@@ -14,10 +14,12 @@
         .top-white .logo {
             height: 100%;
             width: 30%;
-            font-size: 36px;
-            font-family: 隶书;
-            color: rgb(159,121,111);
             float: left;
+            /*
+                WEB-INF下访问外部资源
+             */
+            background-image: url("${pageContext.request.contextPath}/images/logo.jpg");
+            background-repeat: no-repeat;
         }
 
         .top-white .welcome {
@@ -33,9 +35,39 @@
         }
 
         .major-one {
-            height: 300px;
+            height: 400px;
             width: 100%;
             background-color: rgb(36, 40, 51);
+        }
+
+        .major-one .image-left {
+            height: 320px;
+            width: 30%;
+            float: left;
+            margin: 3% 0 3% 2%;
+            background-image: url("${pageContext.request.contextPath}/images/lol.jpg");
+            background-repeat: no-repeat;
+
+        }
+
+        .major-one .image-middle {
+            height: 320px;
+            width: 30%;
+            float: left;
+            margin: 3% 3%;
+            background-image: url("${pageContext.request.contextPath}/images/cod.jpg");
+            background-repeat: no-repeat;
+
+        }
+
+        .major-one .image-right {
+            height: 320px;
+            width: 30%;
+            float: left;
+            margin: 3% 0;
+            background-image: url("${pageContext.request.contextPath}/images/pubg.jpg");
+            background-repeat: no-repeat;
+
         }
     </style>
 </head>
@@ -43,13 +75,22 @@
 
     <div class="top-white">
         <div class="top-white logo">
-            畅 游 之 家 游 戏 论 坛
         </div>
         <div class="top-white welcome">
             欢迎您：<%=session.getAttribute("username")%>&nbsp;<a href="/game_forum/invalidate.jsp">注销</a>
         </div>
     </div>
-    <div class="major-one"></div>
+    <div class="major-one">
+        <div class="major-one image-left">
+
+        </div>
+        <div class="major-one image-middle">
+
+        </div>
+        <div class="major-one image-right">
+
+        </div>
+    </div>
 
     <b>选择你喜欢的游戏模块吧</b><br/>
     <%

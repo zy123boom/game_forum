@@ -19,7 +19,10 @@
             欢迎您：<%=session.getAttribute("username")%>&nbsp;<a href="/game_forum/invalidate.jsp">注销</a>
         </div>
     </div>
-    <div class="major-one"></div>
+
+    <div class="major-one">
+
+    </div>
     <table border="1px">
         <tr>
             <th>游戏模块名</th>
