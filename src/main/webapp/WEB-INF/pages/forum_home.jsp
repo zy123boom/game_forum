@@ -4,8 +4,6 @@
 <html>
 <head>
     <title>游戏论坛主页</title>
-    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../../css/table.css.css">
     <style type="text/css">
         .top-white {
             height: 80px;

@@ -9,11 +9,17 @@
 <html>
 <head>
     <title>论坛主页面（管理员）</title>
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
     <link rel="stylesheet" type="text/css" href="../css/table.css">
 </head>
 <body>
-    欢迎你:<%=session.getAttribute("username")%>&nbsp;<a href="/game_forum/invalidate.jsp">注销</a><br/>
-    <br/>
+    <div class="top-white">
+        <div class="top-white logo"></div>
+        <div class="top-white welcome">
+            欢迎您：<%=session.getAttribute("username")%>&nbsp;<a href="/game_forum/invalidate.jsp">注销</a>
+        </div>
+    </div>
+    <div class="major-one"></div>
     <table border="1px">
         <tr>
             <th>游戏模块名</th>

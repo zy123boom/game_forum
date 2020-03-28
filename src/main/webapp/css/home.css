@@ -1,0 +1,35 @@
+/*
+    主页样式
+ */
+.top-white {
+    height: 80px;
+    width: 100%;
+    background-color: white;
+}
+
+.top-white .logo {
+    height: 100%;
+    width: 30%;
+    float: left;
+    background-image: url("../images/logo.jpg");
+    background-repeat: no-repeat;
+}
+
+.top-white .welcome {
+    height: 100%;
+    width: 15%;
+    float: left;
+    margin-left: 55%;
+    color: #8cc6e5;
+    background-color: #bbffaa;
+}
+
+a:visited {
+    color: cornflowerblue;
+}
+
+.major-one {
+    height: 300px;
+    width: 100%;
+    background-color: rgb(36, 40, 51);
+}
