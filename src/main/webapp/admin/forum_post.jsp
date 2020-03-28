@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>讨论帖展示</title>
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
 </head>
 <body>
     <table border="1px">

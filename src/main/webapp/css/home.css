@@ -28,7 +28,34 @@ a:visited {
 }
 
 .major-one {
-    height: 300px;
+    height: 400px;
     width: 100%;
     background-color: rgb(36, 40, 51);
+}
+
+.major-one .image-left {
+    height: 320px;
+    width: 30%;
+    float: left;
+    margin: 3% 0 3% 2%;
+    background-image: url("../images/lol.jpg");
+    background-repeat: no-repeat;
+}
+
+.major-one .image-middle {
+    height: 320px;
+    width: 30%;
+    float: left;
+    margin: 3% 3%;
+    background-image: url("../images/cod.jpg");
+    background-repeat: no-repeat;
+}
+
+.major-one .image-right {
+    height: 320px;
+    width: 30%;
+    float: left;
+    margin: 3% 0;
+    background-image: url("../images/pubg.jpg");
+    background-repeat: no-repeat;
 }

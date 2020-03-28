@@ -21,7 +21,12 @@
     </div>
 
     <div class="major-one">
-
+        <div class="major-one image-left">
+        </div>
+        <div class="major-one image-middle">
+        </div>
+        <div class="major-one image-right">
+        </div>
     </div>
     <table border="1px">
         <tr>

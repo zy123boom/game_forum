@@ -38,6 +38,7 @@
             height: 400px;
             width: 100%;
             background-color: rgb(36, 40, 51);
+            margin: 0;
         }
 
         .major-one .image-left {
@@ -47,7 +48,6 @@
             margin: 3% 0 3% 2%;
             background-image: url("${pageContext.request.contextPath}/images/lol.jpg");
             background-repeat: no-repeat;
-
         }
 
         .major-one .image-middle {
@@ -57,7 +57,6 @@
             margin: 3% 3%;
             background-image: url("${pageContext.request.contextPath}/images/cod.jpg");
             background-repeat: no-repeat;
-
         }
 
         .major-one .image-right {
@@ -67,7 +66,34 @@
             margin: 3% 0;
             background-image: url("${pageContext.request.contextPath}/images/pubg.jpg");
             background-repeat: no-repeat;
+        }
 
+        .major-two {
+            width: 100%;
+            background-color: rgb(242,246,252);
+            margin: 0;
+        }
+
+        .major-two .title {
+            font-size: 18px;
+            font-family: 楷体;
+            color: black;
+            font-weight: bold;
+            float: left;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .major-three {
+            width: 100%;
+            height: 60px;
+            background-color: rgb(216,235,249);
+        }
+
+        .major-three .opinion {
+            height: 100%;
+            width: 10%;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -82,32 +108,38 @@
     </div>
     <div class="major-one">
         <div class="major-one image-left">
-
         </div>
         <div class="major-one image-middle">
-
         </div>
         <div class="major-one image-right">
-
         </div>
     </div>
 
-    <b>选择你喜欢的游戏模块吧</b><br/>
-    <%
-        List<String> games = (List<String>)session.getAttribute("gameSection");
-        for (String game : games) {
-    %>
-    <ul>
-        <li><a href="../post/showPost?gameSectionName=<%=game%>"><%=game%></a></li>
-    </ul>
-    <%
-        }
-    %>
+    <div class="major-two">
+        <div class="major-two title">选择你喜欢的游戏模块吧</div>
+        <div class="major-two content">
+            <%
+                List<String> games = (List<String>)session.getAttribute("gameSection");
+                for (String game : games) {
+            %>
+            <ul>
+                <li><a href="../post/showPost?gameSectionName=<%=game%>"><%=game%></a></li>
+            </ul>
+            <%
+                }
+            %>
 
+
+        </div>
+    </div>
     <%
         if (session.getAttribute("username") != "tourist") {
     %>
-    <a href="opinion/express_opinion.jsp">发表意见</a>
+    <div class="major-three">
+        <div class="major-three opinion">
+            <a href="opinion/express_opinion.jsp">发表意见</a>
+        </div>
+    </div>
     <%
         }
     %>
