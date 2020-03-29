@@ -68,4 +68,25 @@ public class OpinionController {
         }
         logger.info("controller-用户新增意见功能结束");
     }
+
+    /**
+     * 展示我的意见
+     *
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/showOpinions")
+    public void showOpinions(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        logger.info("controller-展示我的意见功能开始");
+        List<Opinion> opinions = opinionService.showOpinions(request, response);
+        if (null != opinions) {
+            logger.info("controller-展示我的意见成功");
+            request.setAttribute("opinions", opinions);
+            request.getRequestDispatcher("/user/opinion/my_opinion.jsp").forward(request, response);
+        } else {
+            logger.info("controller-展示我的意见失败");
+            response.sendRedirect("../user/express_opinion_fail.jsp");
+        }
+        logger.info("controller-展示我的意见功能结束");
+    }
 }

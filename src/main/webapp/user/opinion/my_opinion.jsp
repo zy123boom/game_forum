@@ -11,6 +11,29 @@
 <html>
 <head>
     <title>我提出的意见</title>
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <style type="text/css">
+        body {
+            background-color: rgb(216,235,249);
+        }
+
+        .back-forum-home {
+            background-color: skyblue;
+            color: black;
+            border: none;
+            border-radius: 3px;
+            width: 200px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 30px auto;
+            outline: 0;
+        }
+
+        .back-forum-home a {
+            text-decoration: none;
+            margin-left: 32%;
+        }
+    </style>
 </head>
 <body>
     <%--展示我提出的意见--%>
@@ -44,7 +67,8 @@
         %>
     </table>
 
-    <br/>
-    <a href="../user/login?username=<%=session.getAttribute("username")%>&password=<%=session.getAttribute("password")%>">返回主页面</a>
+    <div class="back-forum-home">
+        <a href="../user/login?username=<%=session.getAttribute("username")%>&password=<%=session.getAttribute("password")%>">返回主页面</a>
+    </div>
 </body>
 </html>

@@ -70,17 +70,44 @@
             outline: 0;
         }
 
+        .opinion-box .opinion-commit .commit {
+            background-color: skyblue;
+            color: black;
+            border: none;
+            border-radius: 3px;
+            width: 100%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            outline: 0;
+        }
+
         .comment-opinion p {
             color: #8cc6e5;
             font-weight: 700;
             margin-bottom: 20px;
             text-align: center;
         }
+
+        .show-my-opinion {
+            background-color: skyblue;
+            color: black;
+            border: none;
+            border-radius: 3px;
+            width: 100%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            outline: 0;
+        }
+
+        .show-my-opinion a {
+            text-decoration: none;
+            margin-left: 35%;
+        }
     </style>
 </head>
 <body>
     <div class="opinion">
-        <div class="opinion-wrapper">
+        <div class="opinion-wrapper" style="min-height: 457px">
             <div class="opinion-box">
                 <form action="../../opinion/addOpinion" method="post">
                     <div class="comment-opinion">
@@ -89,9 +116,13 @@
                     </div>
 
                     <div class="opinion-commit">
-                        <input type="submit" value="发表" class="opinion-commit">
+                        <input type="submit" value="发表" class="commit">
                     </div>
                 </form>
+
+                <div class="show-my-opinion">
+                    <a href="../../opinion/showOpinions">查看我的意见</a>
+                </div>
             </div>
         </div>
     </div>
