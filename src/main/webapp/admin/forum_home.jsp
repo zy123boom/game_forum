@@ -11,6 +11,62 @@
     <title>论坛主页面（管理员）</title>
     <link rel="stylesheet" type="text/css" href="../css/home.css">
     <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <style type="text/css">
+        .add-game-section {
+            height: 300px;
+            width: 100%;
+            background-color: rgb(191,225,250);
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .add-game-section .add-box {
+            height: 75%;
+            width: 25%;
+            float: left;
+            background-color: white;
+            margin: 35px 550px;
+        }
+
+        .add-box p {
+            color: #8cc6e5;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .add-box .add-game {
+            background-color: #f2f9fc;
+            color: cornflowerblue;
+            border: none;
+            border-radius: 3px;
+            padding: 15px 20px;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            outline: 0;
+        }
+
+        .add-game-submit {
+            background-color: skyblue;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            width: 80%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 20px;
+            outline: 0;
+        }
+
+        .show-opinion a {
+            height: 100%;
+            width: 100px;
+            text-decoration: none;
+            margin-left: 45%;
+        }
+    </style>
 </head>
 <body>
     <div class="top-white">
@@ -49,16 +105,20 @@
             }
         %>
     </table>
-    <br/>
-    <br/>
-    <br/>
-    新增游戏模块名选项<br/>
-    <form action="../admin/addGameSectionName" method="post">
-        请输入要新增的游戏模块：<input type="text" name="gameSectionName"/><br/>
-        <input type="submit" value="增加"><br/>
-    </form>
 
-    <br/>
-    <a href="../admin/showUserOpinion">查看用户意见</a>
+    <div class="add-game-section">
+        <div class="add-box">
+            <p>新增游戏模块名选项</p>
+            <form action="../admin/addGameSectionName" method="post">
+                <p>请输入要新增的游戏模块：</p>
+                <input type="text" name="gameSectionName" class="add-game"/><br/>
+                <input type="submit" value="增加" class="add-game-submit"><br/>
+            </form>
+        </div>
+    </div>
+
+    <div class="show-opinion">
+        <a href="../admin/showUserOpinion">查看用户意见</a>
+    </div>
 </body>
 </html>
