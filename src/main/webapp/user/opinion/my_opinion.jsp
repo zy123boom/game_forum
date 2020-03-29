@@ -43,5 +43,8 @@
             }
         %>
     </table>
+
+    <br/>
+    <a href="../user/login?username=<%=session.getAttribute("username")%>&password=<%=session.getAttribute("password")%>">返回主页面</a>
 </body>
 </html>
