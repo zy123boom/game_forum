@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>所有回复信息</title>
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
 </head>
 <body>
     <table border="1px">
