@@ -27,6 +27,10 @@
             width: 90%;
             outline: 0;
         }
+
+        .back-forum-home a {
+            margin-left: 30%;
+        }
     </style>
 </head>
 <body>
