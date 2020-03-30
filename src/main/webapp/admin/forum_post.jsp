@@ -12,6 +12,15 @@
 <head>
     <title>讨论帖展示</title>
     <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            background-color: rgb(191,225,250);
+            /*background-image: url("../images/lol.jpg");*/
+            background-size: cover;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <table border="1px">

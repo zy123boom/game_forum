@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>管理员登录页面</title>
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
-</head>
+    <head>
+        <title>管理员登录页面</title>
+        <link rel="stylesheet" type="text/css" href="../css/login.css">
+    </head>
     <body>
         <div class="login">
             <div class="login-wrapper">
