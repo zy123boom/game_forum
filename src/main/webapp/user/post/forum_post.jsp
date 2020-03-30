@@ -6,6 +6,27 @@
 <head>
     <title>板块讨论帖</title>
     <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            background-color: rgb(191,225,250);
+            /*background-image: url("../images/lol.jpg");*/
+            background-size: cover;
+            text-align: center;
+        }
+
+        .back-forum-home {
+            background-color: skyblue;
+            color: black;
+            border: none;
+            border-radius: 3px;
+            width: 200px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 30px auto;
+            outline: 0;
+        }
+    </style>
 </head>
 <body>
     <table border="1px">
@@ -34,18 +55,20 @@
         <%
             }
         %>
-
     </table>
-    <br/>
-    <a href="../user/login?username=<%=session.getAttribute("username")%>&password=<%=session.getAttribute("password")%>">返回主页面</a>
-    <br/>
 
-    <%
-        if (!session.getAttribute("username").equals("tourist")) {
-    %>
-    <a href="../user/post/add_post.jsp">发表新帖</a><br/>
-    <%
-        }
-    %>
+    <div class="back-forum-home">
+        <%
+            if (!session.getAttribute("username").equals("tourist")) {
+        %>
+        <a href="../user/post/add_post.jsp">发表新帖</a><br/>
+        <%
+            }
+        %>
+    </div>
+
+    <div class="back-forum-home">
+        <a href="../user/login?username=<%=session.getAttribute("username")%>&password=<%=session.getAttribute("password")%>">返回主页面</a>
+    </div>
 </body>
 </html>
