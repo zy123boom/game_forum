@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    background-color: rgb(191,225,250);
+    /*background-image: url("../images/lol.jpg");*/
+    background-size: cover;
+    text-align: center;
+}
+
+.post-content {
+    height: 300px;
+    width: 100%;
+    background-color: #f2f9fc;
+}
+
+.post-content textarea {
+    width: 60%;
+    height: 80%;
+    margin-top: 20px;
+}
+
+.back-forum-home {
+    background-color: skyblue;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 30px auto;
+    outline: 0;
+}
+
+.new-commit {
+    color: white;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    outline: 0;
+}
+
+.commit {
+    width:100px;
+    color: skyblue;
+    border: none;
+    border-radius: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    outline: 0;
+}
