@@ -12,6 +12,23 @@
 <head>
     <title>所有回复信息</title>
     <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <style type="text/css">
+        .back-post-content {
+            background-color: skyblue;
+            color: black;
+            border: none;
+            border-radius: 3px;
+            width: 200px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 30px auto;
+            outline: 0;
+        }
+
+        .back-post-content a {
+            margin-left: 25%;
+        }
+    </style>
 </head>
 <body>
     <table border="1px">
@@ -34,5 +51,9 @@
             }
         %>
     </table>
+
+    <div class="back-post-content">
+        <a href="../post/showPost?gameSectionName=<%=session.getAttribute("gameSectionName")%>">返回帖子列表</a>
+    </div>
 </body>
 </html>
