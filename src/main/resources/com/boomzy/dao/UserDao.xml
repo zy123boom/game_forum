@@ -45,4 +45,9 @@
         where user_name = #{userName}
     </select>
 
+    <select id="showUserInformation" parameterType="string" resultMap="userMap">
+        select *
+        from t_forum_user
+        where user_name = #{username}
+    </select>
 </mapper>

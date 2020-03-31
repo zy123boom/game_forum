@@ -108,7 +108,8 @@
         <div class="top-white logo">
         </div>
         <div class="top-white welcome">
-            欢迎您：<%=session.getAttribute("username")%>&nbsp;<a href="/game_forum/invalidate.jsp">注销</a>
+            欢迎您:<a href="../user/showUserInformation?username=<%=session.getAttribute("username")%>">
+            <%=session.getAttribute("username")%></a>&nbsp;&nbsp;<a href="/game_forum/invalidate.jsp">注销</a>
         </div>
     </div>
     <div class="major-one">

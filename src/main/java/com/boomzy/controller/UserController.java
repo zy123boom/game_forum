@@ -125,4 +125,28 @@ public class UserController {
         logger.info("controller-注册功能结束");
     }
 
+    /**
+     * 展示用户信息
+     *
+     * @param username
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/showUserInformation")
+    public void showUserInformation(String username, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        logger.info("controller-展示用户信息功能开始");
+        if (null != username) {
+            User user = userService.showUserInformation(username);
+            if (null != user) {
+                logger.info("controller-展示用户信息成功");
+                request.setAttribute("user", user);
+                request.getRequestDispatcher("/user/user_information.jsp").forward(request, response);
+            } else {
+                logger.info("controller-展示用户信息失败");
+                response.sendRedirect("show_information_fail.jsp");
+            }
+        }
+        logger.info("controller-展示用户信息功能结束");
+    }
+
 }

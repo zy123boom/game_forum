@@ -45,4 +45,12 @@ public interface UserDao {
      * @return
      */
     int queryUserNameCount(String userName);
+
+    /**
+     * 展示用户信息
+     *
+     * @param username
+     * @return
+     */
+    User showUserInformation(String username);
 }

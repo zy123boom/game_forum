@@ -64,4 +64,17 @@ public class UserServiceImpl implements UserService {
         logger.info("service-查询用户名数目功能结束");
         return result;
     }
+
+    @Override
+    public User showUserInformation(String username) {
+        logger.info("service-展示用户信息功能开始");
+        User user = userDao.showUserInformation(username);
+        if (null != user) {
+            logger.info("service-展示用户信息成功");
+        } else {
+            logger.info("service-展示用户信息失败");
+        }
+        logger.info("service-展示用户信息功能结束");
+        return user;
+    }
 }
