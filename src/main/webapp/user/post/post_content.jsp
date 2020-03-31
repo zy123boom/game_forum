@@ -83,6 +83,7 @@
             <th>评论作者</th>
             <th>评论内容</th>
             <th>发表时间</th>
+            <th>回复评论</th>
             <th>查看回复</th>
         </tr>
         <%
@@ -94,6 +95,7 @@
             <td><%=comment.getCommentAuthor()%></td>
             <td><%=comment.getCommentContent()%></td>
             <td><%=DateUtils.conversionDate(comment.getCreateTime())%></td>
+            <td><a href="/game_forum/user/post/reply_comment.jsp?commentId=<%=comment.getCommentId()%>">回复评论</a></td>
             <td><a href="../post/showReplies?commentId=<%=comment.getCommentId()%>">查看该评论的所有回复</a></td>
             <%
                     }

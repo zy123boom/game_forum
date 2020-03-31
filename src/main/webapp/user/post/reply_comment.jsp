@@ -11,7 +11,10 @@
     <title>回复帖子</title>
 </head>
 <body>
-    <form action="../../post/addReply?commentId=<%=request.getParameter("commentId")%>&gameSectionName=<%=session.getAttribute("gameSectionName")%>" method="post">
+    <%
+        String commentId = request.getParameter("commentId");
+    %>
+    <form action="../../post/addReply?commentId=<%=commentId%>&gameSectionName=<%=session.getAttribute("gameSectionName")%>" method="post">
         请输入您的回复： <input type="text" name="replyContent"><br/>
         <input type="submit" value="提交"><br/>
     </form>
