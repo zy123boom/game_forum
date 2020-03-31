@@ -11,6 +11,6 @@
     <title>新增评论失败</title>
 </head>
 <body>
-    <a href="post/forum_post.jsp">评论失败，重新评论</a>
+    评论失败
 </body>
 </html>
