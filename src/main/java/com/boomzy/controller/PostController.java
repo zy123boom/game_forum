@@ -197,7 +197,8 @@ public class PostController {
         int result = postService.addReply(comment);
         if (result == 1) {
             logger.info("controller-回复评论成功", comment);
-            postService.addCommentCount(replyContent);
+            // 回复成功，增加评论数量
+            postService.addCommentCountByPostId(postId);
             showPost(gameSectionName, request, response);
         } else {
             logger.info("controller-回复评论失败", comment);

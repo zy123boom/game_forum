@@ -102,4 +102,11 @@ public interface PostService {
      * @return
      */
     List<Comment> showReplies(String commentId);
+
+    /**
+     * 根据postId增加评论数量
+     *
+     * @param postId
+     */
+    void addCommentCountByPostId(String postId);
 }

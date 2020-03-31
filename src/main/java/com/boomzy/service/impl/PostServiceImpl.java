@@ -101,4 +101,11 @@ public class PostServiceImpl implements PostService {
         logger.info("service-展示评论回复信息功能结束");
         return replies;
     }
+
+    @Override
+    public void addCommentCountByPostId(String postId) {
+        logger.info("service-根据postId增加评论数量功能开始");
+        postDao.addCommentCountByPostId(postId);
+        logger.info("service-根据postId增加评论数量功能结束");
+    }
 }
