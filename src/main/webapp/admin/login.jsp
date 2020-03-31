@@ -16,7 +16,7 @@
             <div class="login-wrapper">
                 <div class="login-box">
                     <form action="../admin/login" method="post">
-                        <p>欢迎登录游戏论坛</p>
+                        <p>管理员登录</p>
                         <div class="login-group">
                             用户名：<input type="text" name="username" class="login-input"/>
                         </div>
