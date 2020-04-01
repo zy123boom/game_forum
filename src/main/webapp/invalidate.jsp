@@ -7,7 +7,7 @@
 <body>
     <%
         session.invalidate();
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("/game_forum/login.jsp");
     %>
 </body>
 </html>

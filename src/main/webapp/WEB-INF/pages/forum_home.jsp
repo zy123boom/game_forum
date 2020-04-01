@@ -28,9 +28,9 @@
 
         .top-white .welcome {
             height: 100%;
-            width: 15%;
+            width: 20%;
             float: left;
-            margin-left: 55%;
+            margin-left: 50%;
             color: #8cc6e5;
         }
 
@@ -109,7 +109,9 @@
         </div>
         <div class="top-white welcome">
             欢迎您:<a href="../user/showUserInformation?username=<%=session.getAttribute("username")%>">
-            <%=session.getAttribute("username")%></a>&nbsp;&nbsp;<a href="/game_forum/invalidate.jsp">注销</a>
+            <%=session.getAttribute("username")%></a>&nbsp;&nbsp;
+            <a href="/game_forum/invalidate.jsp">注销</a>
+            <a href="../user/update_password.jsp">修改密码</a>
         </div>
     </div>
     <div class="major-one">

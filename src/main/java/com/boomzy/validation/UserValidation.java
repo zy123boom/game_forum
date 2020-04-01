@@ -86,4 +86,16 @@ public class UserValidation {
 
         return true;
     }
+
+    /**
+     * 通用验证
+     *
+     * @param parameter
+     */
+    public static boolean genericValidation(String parameter) {
+        if (parameter == null || StringUtils.isBlank(parameter)) {
+            return false;
+        }
+        return true;
+    }
 }

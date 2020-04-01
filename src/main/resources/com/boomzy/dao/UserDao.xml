@@ -50,4 +50,12 @@
         from t_forum_user
         where user_name = #{username}
     </select>
+
+    <update id="updatePassword" parameterType="string">
+        update
+        t_forum_user
+        set password = #{newPassword}
+        where user_name = #{username}
+        and password = #{oldPassword}
+    </update>
 </mapper>

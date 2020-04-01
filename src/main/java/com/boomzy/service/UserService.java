@@ -42,4 +42,13 @@ public interface UserService {
      * @return
      */
     User showUserInformation(String username);
+
+    /**
+     * 修改密码
+     *
+     * @param username
+     * @param newPassword
+     * @return
+     */
+    int updatePassword(String username, String oldPassword, String newPassword);
 }

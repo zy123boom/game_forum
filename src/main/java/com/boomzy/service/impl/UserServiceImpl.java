@@ -77,4 +77,17 @@ public class UserServiceImpl implements UserService {
         logger.info("service-展示用户信息功能结束");
         return user;
     }
+
+    @Override
+    public int updatePassword(String username, String oldPassword, String newPassword) {
+        logger.info("service-修改密码功能开始");
+        int result = userDao.updatePassword(username, oldPassword, newPassword);
+        if (result == LoginEnum.SUCCESS.getCode()) {
+            logger.info("service-修改密码成功");
+        } else {
+            logger.info("service-修改密码失败");
+        }
+        logger.info("service-修改密码功能结束");
+        return result;
+    }
 }

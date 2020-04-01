@@ -126,6 +126,56 @@ public class UserController {
     }
 
     /**
+     * 修改密码
+     *
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/updatePassword")
+    public void updatePassword(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        logger.info("controller-修改密码功能开始");
+        String username = request.getParameter("username");
+        String oldPassword = request.getParameter("oldPassword");
+        String newPassword = request.getParameter("newPassword");
+        String confirmPassword = request.getParameter("confirmPassword");
+        if (!(UserValidation.genericValidation(username) && UserValidation.genericValidation(oldPassword)
+            && UserValidation.genericValidation(newPassword) && UserValidation.genericValidation(confirmPassword))) {
+            logger.info("controller-修改密码功能失败，参数校验不合法");
+            response.sendRedirect("update_password_fail.jsp");
+            logger.info("controller-修改密码功能结束");
+            return;
+        }
+
+        if (!newPassword.equals(confirmPassword)) {
+            logger.info("controller-修改密码失败，密码验证不一致");
+            response.sendRedirect("update_password_fail.jsp");
+            logger.info("controller-修改密码功能结束");
+            return;
+        }
+
+        int loginResult = userService.login(username, oldPassword);
+        if (loginResult != LoginEnum.SUCCESS.getCode()) {
+            logger.info("controller-修改密码失败，账户密码错误");
+            response.sendRedirect("update_password_fail.jsp");
+            logger.info("controller-修改密码功能结束");
+            return;
+        }
+
+        // 修改密码
+        int result = userService.updatePassword(username, oldPassword, newPassword);
+
+        if (result == LoginEnum.SUCCESS.getCode()) {
+            logger.info("controller-修改密码成功！");
+            // 修改完后重新登陆
+            request.getRequestDispatcher("../invalidate.jsp").forward(request, response);
+        } else {
+            logger.info("controller-修改密码失败，系统错误");
+            response.sendRedirect("update_password_fail.jsp");
+        }
+        logger.info("controller-修改密码结束");
+    }
+
+    /**
      * 展示用户信息
      *
      * @param username

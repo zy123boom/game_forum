@@ -53,4 +53,15 @@ public interface UserDao {
      * @return
      */
     User showUserInformation(String username);
+
+    /**
+     * 修改密码
+     *
+     * @param username
+     * @param oldPassword
+     * @param newPassword
+     * @return
+     */
+    int updatePassword(@Param("username") String username, @Param("oldPassword") String oldPassword,
+                       @Param("newPassword") String newPassword);
 }
