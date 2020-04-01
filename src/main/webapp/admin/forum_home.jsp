@@ -60,7 +60,32 @@
             outline: 0;
         }
 
+        .other {
+            height: 40px;
+            width: 100%;
+        }
+
+        .other .show-opinion {
+            height: 100%;
+            width: 20%;
+            float: left;
+            margin-left: 30%;
+        }
+
         .show-opinion a {
+            height: 100%;
+            width: 100px;
+            text-decoration: none;
+            margin-left: 45%;
+        }
+
+        .other .show-user {
+            height: 100%;
+            width: 20%;
+            float: left;
+        }
+
+        .show-user a {
             height: 100%;
             width: 100px;
             text-decoration: none;
@@ -117,8 +142,14 @@
         </div>
     </div>
 
-    <div class="show-opinion">
-        <a href="../admin/showUserOpinion">查看用户意见</a>
+    <div class="other">
+        <div class="show-opinion">
+            <a href="../admin/showUserOpinion">意见管理</a>
+        </div>
+
+        <div class="show-user">
+            <a href="../admin/showUsers">用户管理</a>
+        </div>
     </div>
 </body>
 </html>

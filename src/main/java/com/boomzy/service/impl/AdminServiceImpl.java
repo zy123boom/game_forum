@@ -3,6 +3,7 @@ package com.boomzy.service.impl;
 import com.boomzy.dao.AdminDao;
 import com.boomzy.domain.GameSection;
 import com.boomzy.domain.Opinion;
+import com.boomzy.domain.User;
 import com.boomzy.enums.LoginEnum;
 import com.boomzy.service.AdminService;
 import org.slf4j.Logger;
@@ -152,5 +153,32 @@ public class AdminServiceImpl implements AdminService {
         }
         logger.info("service-addOpinionReply end");
         return result;
+    }
+
+    @Override
+    public List<User> showUsers() {
+        logger.info("service-showUsers start");
+        List<User> users = adminDao.showUsers();
+        if (null != users) {
+            logger.info("service-showUsers success");
+        } else {
+            logger.info("service-showUsers failed");
+        }
+        logger.info("service-showUsers end");
+        return users;
+    }
+
+    @Override
+    public int deleteUser(String username) {
+        logger.info("service-deleteUser start");
+        int result = adminDao.deleteUser(username);
+        if (result == 1) {
+            logger.info("service-deleteUser success");
+        } else {
+            logger.info("service-deleteUser failed");
+        }
+        logger.info("service-deleteUser end");
+        return result;
+
     }
 }

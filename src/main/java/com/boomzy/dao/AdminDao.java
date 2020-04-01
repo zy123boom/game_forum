@@ -2,6 +2,7 @@ package com.boomzy.dao;
 
 import com.boomzy.domain.GameSection;
 import com.boomzy.domain.Opinion;
+import com.boomzy.domain.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -118,4 +119,19 @@ public interface AdminDao {
      * @return
      */
     int addOpinionReply(@Param("opinionId") String opinionId, @Param("opinionReply") String opinionReply);
+
+    /**
+     * 展示用户
+     *
+     * @return
+     */
+    List<User> showUsers();
+
+    /**
+     * 删除用户
+     *
+     * @param username
+     * @return
+     */
+    int deleteUser(String username);
 }

@@ -129,4 +129,15 @@
         where opinion_id = #{opinionId}
     </update>
 
+    <select id="showUsers" resultMap="userMap">
+        select *
+        from t_forum_user
+        where user_type in ('01', '04')
+    </select>
+
+    <delete id="deleteUser" parameterType="string">
+        delete from
+        t_forum_user
+        where user_name = #{username}
+    </delete>
 </mapper>

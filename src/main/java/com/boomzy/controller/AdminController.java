@@ -1,9 +1,6 @@
 package com.boomzy.controller;
 
-import com.boomzy.domain.Comment;
-import com.boomzy.domain.GameSection;
-import com.boomzy.domain.Opinion;
-import com.boomzy.domain.Post;
+import com.boomzy.domain.*;
 import com.boomzy.enums.LoginEnum;
 import com.boomzy.service.AdminService;
 import com.boomzy.service.PostService;
@@ -318,5 +315,49 @@ public class AdminController {
             response.sendRedirect("opinion_reply_fail.jsp");
         }
         logger.info("controller-addOpinionReply end");
+    }
+
+    /**
+     * 展示用户（用户管理）
+     *
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/showUsers")
+    public void showUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        logger.info("controller-showUsers start");
+        List<User> users = adminService.showUsers();
+        if (null != users) {
+            logger.info("controller-showUsers success");
+            request.setAttribute("users", users);
+            request.getRequestDispatcher("/admin/user_information.jsp").forward(request, response);
+        } else {
+            logger.info("controller-showUsers failed");
+            response.sendRedirect("show_information_fail.jsp");
+        }
+        logger.info("controller-showUsers end");
+    }
+
+    /**
+     * 删除用户
+     *
+     * @param username
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/deleteUser")
+    public void deleteUser(String username, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        logger.info("controller-deleteUser start");
+        int result = adminService.deleteUser(username);
+        if (result == 1) {
+            logger.info("controller-deleteUser success");
+            // 删除成功后，重新查询用户
+            showUsers(request, response);
+        } else {
+            logger.info("controller-deleteUser failed");
+            logger.info("controller-deleteUser end");
+            throw new RuntimeException("deleteUser error");
+        }
+        logger.info("controller-deleteUser end");
     }
 }

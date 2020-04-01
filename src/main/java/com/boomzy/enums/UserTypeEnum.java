@@ -8,7 +8,9 @@ package com.boomzy.enums;
  */
 public enum UserTypeEnum {
     NORMAL_USER("01", "普通用户"),
-    ADMINISTRATOR("02", "管理员")
+    ADMINISTRATOR("02", "管理员"),
+    TOURIST("03", "游客"),
+    INVALID("04", "已失效")
     ;
 
     private String code;

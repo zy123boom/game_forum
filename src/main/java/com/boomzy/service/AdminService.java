@@ -2,6 +2,7 @@ package com.boomzy.service;
 
 import com.boomzy.domain.GameSection;
 import com.boomzy.domain.Opinion;
+import com.boomzy.domain.User;
 
 import java.util.List;
 
@@ -106,4 +107,19 @@ public interface AdminService {
      * @return
      */
     int addOpinionReply(String opinionId, String opinionReply);
+
+    /**
+     * 展示用户
+     *
+     * @return
+     */
+    List<User> showUsers();
+
+    /**
+     * 删除用户
+     *
+     * @param username
+     * @return
+     */
+    int deleteUser(String username);
 }
