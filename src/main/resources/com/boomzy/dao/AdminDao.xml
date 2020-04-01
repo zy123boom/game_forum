@@ -35,6 +35,13 @@
         <result property="updateTime" column="update_time"></result>
     </resultMap>
 
+    <resultMap id="sensitiveMap" type="com.boomzy.domain.SensitiveWord">
+        <id property="id" column="id"></id>
+        <result property="sensitiveWordContent" column="sensitive_word"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="updateTime" column="update_time"></result>
+    </resultMap>
+
 
     <select id="login" parameterType="string" resultType="int">
         select count(id)
@@ -121,4 +128,5 @@
         set opinion_reply = #{opinionReply}
         where opinion_id = #{opinionId}
     </update>
+
 </mapper>
