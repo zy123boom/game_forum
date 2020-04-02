@@ -23,12 +23,13 @@
             width: 200px;
             padding-top: 5px;
             padding-bottom: 5px;
-            margin: 30px auto;
+            margin: 50px auto;
             outline: 0;
         }
     </style>
 </head>
 <body>
+    <p>帖子列表</p>
     <table border="1px">
         <tr>
             <th>帖子标题</th>
@@ -56,6 +57,42 @@
             }
         %>
     </table>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <%
+        List<Post> hotPosts = (List<Post>)session.getAttribute("hotPosts");
+        if (hotPosts.size() > 0) {
+    %>
+    <table>
+        <p>热帖列表</p>
+        <tr>
+            <th>帖子标题</th>
+            <th>帖子作者</th>
+            <th>发布时间</th>
+            <th>更新时间</th>
+        </tr>
+
+        <%
+
+            for (Post hotPost : hotPosts) {
+        %>
+        <tr>
+            <%--<td><a href="../post/showPostContent?postId=<%=post.getPostId()%>"><%=post.getPostId()%></a></td>--%>
+            <td><a href="../post/showPostContent?postId=<%=hotPost.getPostId()%>"><%=hotPost.getPostSubject()%></a></td>
+            <td><%=hotPost.getPostAuthor()%></td>
+            <td><%=DateUtils.conversionDate(hotPost.getCreateTime())%></td>
+            <td><%=DateUtils.conversionDate(hotPost.getUpdateTime())%></td>
+        </tr>
+        <%
+            }
+        %>
+    </table>
+    <%
+        }
+    %>
 
     <div class="back-forum-home">
         <%

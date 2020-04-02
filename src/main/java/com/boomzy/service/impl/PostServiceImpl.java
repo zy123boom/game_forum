@@ -25,8 +25,27 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<Post> showPost(String gameSectionName) {
         logger.info("service-展示讨论帖功能开始");
+        List<Post> posts = postDao.showPost(gameSectionName);
+        if (null != posts) {
+            logger.info("service-展示讨论帖功能成功");
+        } else {
+            logger.info("service-展示讨论帖功能失败");
+        }
         logger.info("service-展示讨论帖功能结束");
-        return postDao.showPost(gameSectionName);
+        return posts;
+    }
+
+    @Override
+    public List<Post> showHotPost(String gameSectionName) {
+        logger.info("service-展示热帖功能开始");
+        List<Post> hotPosts = postDao.showHotPost(gameSectionName);
+        if (null != hotPosts) {
+            logger.info("service-展示热帖功能成功");
+        } else {
+            logger.info("service-展示热帖功能开始");
+        }
+        logger.info("service-展示热帖功能结束");
+        return hotPosts;
     }
 
     @Override

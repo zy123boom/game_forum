@@ -22,6 +22,14 @@ public interface PostService {
     List<Post> showPost(String gameSectionName);
 
     /**
+     * 根据游戏板块名展示热帖
+     *
+     * @param gameSectionName
+     * @return
+     */
+    List<Post> showHotPost(String gameSectionName);
+
+    /**
      * 根据帖子ID展示帖子内容
      *
      * @param postId

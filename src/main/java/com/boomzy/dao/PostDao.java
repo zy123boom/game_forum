@@ -21,6 +21,14 @@ public interface PostDao {
     List<Post> showPost(String gameSectionName);
 
     /**
+     * 根据游戏板块名展示热帖
+     *
+     * @param gameSectionName
+     * @return
+     */
+    List<Post> showHotPost(String gameSectionName);
+
+    /**
      * 根据帖子ID增加帖子浏览量
      *
      * @param postId
@@ -111,4 +119,5 @@ public interface PostDao {
      * @param postId
      */
     void addCommentCountByPostId(String postId);
+
 }

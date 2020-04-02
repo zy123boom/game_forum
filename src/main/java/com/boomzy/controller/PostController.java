@@ -49,8 +49,32 @@ public class PostController {
         HttpSession session = request.getSession();
         session.setAttribute("posts", posts);
         session.setAttribute("gameSectionName", gameSectionName);
+        // 同时展示热帖
+        showHotPost(gameSectionName, request, response);
         request.getRequestDispatcher("/user/post/forum_post.jsp").forward(request, response);
         logger.info("controller-展示讨论帖功能结束");
+    }
+
+    /**
+     * 展示热帖
+     *
+     * @param gameSectionName
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/showHotPost")
+    public void showHotPost(String gameSectionName, HttpServletRequest request, HttpServletResponse response) {
+        logger.info("controller-展示热帖功能开始");
+        HttpSession session = request.getSession();
+        // 热帖为浏览量大于60且评论量大于5
+        List<Post> hotPosts = postService.showHotPost(gameSectionName);
+        if (null != hotPosts) {
+            logger.info("controller-展示热帖成功");
+            session.setAttribute("hotPosts", hotPosts);
+        } else {
+            logger.info("controller-展示热帖失败");
+        }
+        logger.info("controller-展示热帖功能结束");
     }
 
     /**

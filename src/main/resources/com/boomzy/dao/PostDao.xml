@@ -37,6 +37,17 @@
         and is_sensitive = '10'
     </select>
 
+    <select id="showHotPost" parameterType="string" resultMap="postMap">
+        select *
+        from t_forum_post_information
+        where owned_section = #{gameSectionName}
+        and is_deleted = '00'
+        and is_sensitive = '10'
+        and view_count >= 80
+        and comment_count >= 5
+        order by view_count
+    </select>
+
     <update id="addViewCount" parameterType="string">
         update t_forum_post_information
         set view_count = view_count + 1
