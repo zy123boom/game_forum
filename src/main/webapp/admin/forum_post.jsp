@@ -1,6 +1,7 @@
 <%@ page import="com.boomzy.domain.Post" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.boomzy.util.DateUtils" %><%--
+<%@ page import="com.boomzy.util.DateUtils" %>
+<%@ page import="com.boomzy.enums.SensitiveEnum" %><%--
   Created by IntelliJ IDEA.
   User: boomzy
   Date: 2020/3/20
@@ -32,6 +33,7 @@
             <th>评论数</th>
             <th>发布时间</th>
             <th>更新时间</th>
+            <th>敏感性</th>
             <th>删除帖子选项</th>
         </tr>
 
@@ -47,6 +49,17 @@
             <td><%=post.getCommentCount()%></td>
             <td><%=DateUtils.conversionDate(post.getCreateTime())%></td>
             <td><%=DateUtils.conversionDate(post.getUpdateTime())%></td>
+            <%
+                if (post.getSensitive().equals(SensitiveEnum.NOT_SENSITIVE_POST.getCode())) {
+            %>
+            <td>非敏感</td>
+            <%
+                } else if (post.getSensitive().equals(SensitiveEnum.SENSITIVE_POST.getCode())) {
+            %>
+            <td style="background-color: darkred">敏感帖，建议删除</td>
+            <%
+                }
+            %>
             <td><a href="../admin/deletePostByPostId?postId=<%=post.getPostId()%>">删除帖子</a></td>
         </tr>
         <%

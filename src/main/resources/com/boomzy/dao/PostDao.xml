@@ -34,7 +34,6 @@
         from t_forum_post_information
         where owned_section = #{gameSectionName}
         and is_deleted = '00'
-        and is_sensitive = '10'
     </select>
 
     <select id="showHotPost" parameterType="string" resultMap="postMap">

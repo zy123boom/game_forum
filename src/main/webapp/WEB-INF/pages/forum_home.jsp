@@ -110,7 +110,7 @@
         <div class="top-white welcome">
             欢迎您:<a href="../user/showUserInformation?username=<%=session.getAttribute("username")%>">
             <%=session.getAttribute("username")%></a>&nbsp;&nbsp;
-            <a href="/game_forum/invalidate.jsp">注销</a>
+            <a href="/game_forum/invalidate.jsp">退出</a>
             <a href="../user/update_password.jsp">修改密码</a>
         </div>
     </div>

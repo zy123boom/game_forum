@@ -1,13 +1,11 @@
-package com.boomzy.service;
+package com.boomzy.dao;
 
-import com.boomzy.dao.UserDao;
 import com.boomzy.domain.User;
 import com.boomzy.enums.UserTypeEnum;
-import com.boomzy.service.impl.UserServiceImpl;
+import com.boomzy.dao.UserDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -15,20 +13,20 @@ import java.util.Date;
 
 /**
  * @author boomzy
- * @date 2020/3/2 17:28
+ * @date 2020/4/2 20:20
  */
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 @RunWith(value = SpringJUnit4ClassRunner.class)
-public class UserServiceTest {
+public class UserDaoTest {
 
     @Autowired
-    private UserService userService;
+    private UserDao userDao;
 
     @Test
     public void loginTest() {
         String username = "boomzy";
         String password = "zy123456";
-        int login = userService.login(username, password);
+        int login = userDao.login(username, password);
         System.out.println(login);
     }
 
@@ -45,14 +43,14 @@ public class UserServiceTest {
         user.setCity("宜昌");
         user.setCreateTime(new Date());
         user.setUpdateTime(new Date());
-        int res = userService.register(user);
+        int res = userDao.register(user);
         System.out.println(res);
     }
 
     @Test
     public void showUserInformationTest() {
         String username = "uzi";
-        User user = userService.showUserInformation(username);
+        User user = userDao.showUserInformation(username);
         System.out.println(user);
     }
 }
