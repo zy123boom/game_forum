@@ -140,4 +140,9 @@
         t_forum_user
         where user_name = #{username}
     </delete>
+
+    <select id="getSensitiveWords" resultType="string">
+        select sensitive_word
+        from t_forum_sensitive_words
+    </select>
 </mapper>

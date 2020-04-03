@@ -4,6 +4,7 @@ import com.boomzy.domain.*;
 import com.boomzy.enums.LoginEnum;
 import com.boomzy.service.AdminService;
 import com.boomzy.service.PostService;
+import com.boomzy.service.SensitiveWordService;
 import com.boomzy.util.RandomUtils;
 import com.boomzy.validation.GameSectionValidation;
 import com.boomzy.validation.OpinionValidation;
@@ -43,6 +44,9 @@ public class AdminController {
 
     @Autowired
     private PostService postService;
+
+    @Autowired
+    private SensitiveWordService sensitiveWordService;
 
     /**
      * 管理员登录
@@ -186,6 +190,14 @@ public class AdminController {
         logger.info("controller-showPost start");
         HttpSession session = request.getSession();
         List<Post> posts = postService.showPost(gameSectionName);
+        // 查敏
+        for (Post post : posts) {
+            if (sensitiveWordService.checkSensitiveWord(post.getPostContent()) > 0) {
+                // 敏感帖子，删帖
+                adminService.deletePostByPostId(post.getPostId());
+            }
+        }
+
         if (null != posts) {
             logger.info("controller-showPost success");
             request.setAttribute("posts", posts);

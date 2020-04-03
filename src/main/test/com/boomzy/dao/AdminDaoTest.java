@@ -70,4 +70,10 @@ public class AdminDaoTest {
             System.out.println(user);
         }
     }
+
+    @Test
+    public void getSensitiveWordsTest() {
+        List<String> sensitiveWords = adminDao.getSensitiveWords();
+        System.out.println(sensitiveWords.size());
+    }
 }

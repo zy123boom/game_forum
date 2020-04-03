@@ -134,4 +134,6 @@ public interface AdminDao {
      * @return
      */
     int deleteUser(String username);
+
+    List<String> getSensitiveWords();
 }
