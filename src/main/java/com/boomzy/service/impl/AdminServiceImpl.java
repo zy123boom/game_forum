@@ -183,7 +183,17 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public int checkSensitiveWord(String postContent) {
-        return 0;
+    public int updateSensitivityByPostId(String postId) {
+        logger.info("service-updateSensitivityByPostId start");
+        int result = adminDao.updateSensitivityByPostId(postId);
+        if (result == 1) {
+            logger.info("service-updateSensitivityByPostId success");
+        } else {
+            logger.info("service-updateSensitivityByPostId failed");
+        }
+        logger.info("service-updateSensitivityByPostId end");
+        return result;
     }
+
+
 }

@@ -56,7 +56,7 @@
             <%
                 } else if (post.getSensitive().equals(SensitiveEnum.SENSITIVE_POST.getCode())) {
             %>
-            <td style="background-color: darkred">敏感帖，建议删除</td>
+            <td style="background-color: darkred">疑似敏感帖</td>
             <%
                 }
             %>

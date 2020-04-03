@@ -124,10 +124,10 @@ public interface AdminService {
     int deleteUser(String username);
 
     /**
-     * 检测敏感词
+     * 根据postId修改敏感性
      *
-     * @param postContent
-     * @return 如果有敏感词，返回结果大于等于0
+     * @param postId
+     * @return
      */
-    int checkSensitiveWord(String postContent);
+    int updateSensitivityByPostId(String postId);
 }

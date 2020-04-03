@@ -190,15 +190,14 @@ public class AdminController {
         logger.info("controller-showPost start");
         HttpSession session = request.getSession();
         List<Post> posts = postService.showPost(gameSectionName);
-        // 查敏
-        for (Post post : posts) {
-            if (adminService.checkSensitiveWord(post.getPostContent()) > 0) {
-                // 敏感帖子，删帖
-                adminService.deletePostByPostId(post.getPostId());
-            }
-        }
-
         if (null != posts) {
+            // 查敏
+            for (Post post : posts) {
+                if (sensitiveWordService.isContainSensitiveWord(post.getPostContent())) {
+                    // 敏感帖子，置为敏感性
+                    adminService.updateSensitivityByPostId(post.getPostId());
+                }
+            }
             logger.info("controller-showPost success");
             request.setAttribute("posts", posts);
             session.setAttribute("gameSectionName", gameSectionName);

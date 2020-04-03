@@ -145,4 +145,11 @@
         select sensitive_word
         from t_forum_sensitive_words
     </select>
+
+    <update id="updateSensitivityByPostId" parameterType="string">
+        update
+        t_forum_post_information
+        set is_sensitive = '11'
+        where post_id = #{postId}
+    </update>
 </mapper>

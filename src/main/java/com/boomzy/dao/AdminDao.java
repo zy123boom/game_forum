@@ -136,4 +136,6 @@ public interface AdminDao {
     int deleteUser(String username);
 
     List<String> getSensitiveWords();
+
+    int updateSensitivityByPostId(String postId);
 }
