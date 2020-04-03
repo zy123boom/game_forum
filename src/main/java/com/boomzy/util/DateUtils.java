@@ -1,6 +1,7 @@
 package com.boomzy.util;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -21,5 +22,19 @@ public class DateUtils {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateString = format.format(date);
         return dateString;
+    }
+
+    /**
+     * 获取当前时间向后30天的时间
+     *
+     * @param date
+     * @return
+     */
+    public static Date getThirtyDaysLater(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        calendar.add(Calendar.DATE, 30);
+        Date time = calendar.getTime();
+        return time;
     }
 }

@@ -19,4 +19,6 @@ public interface DarkHouseDao {
      * @return
      */
     List<DarkUser> showDarkUser();
+
+    int addUserInDarkHouse(DarkUser darkUser);
 }

@@ -16,4 +16,12 @@ public interface DarkHouseService {
      * @return
      */
     List<DarkUser> showDarkUser();
+
+    /**
+     * 用户封号
+     *
+     * @param darkUser
+     * @return
+     */
+    int addUserInDarkHouse(DarkUser darkUser);
 }

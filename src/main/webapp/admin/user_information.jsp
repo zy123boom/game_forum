@@ -16,7 +16,10 @@
     <link rel="stylesheet" type="text/css" href="../css/table.css">
     <style type="text/css">
         body {
-            background-color: rgb(216,235,249);
+            margin: 0;
+            background-color: rgb(191,225,250);
+            background-size: cover;
+            text-align: center;
         }
 
         .back-forum-home {
@@ -38,8 +41,8 @@
     </style>
 </head>
 <body>
+    <p>所有用户</p>
     <table>
-        <p>所有用户</p>
         <tr>
             <th>用户名</th>
             <th>真实姓名</th>
@@ -85,8 +88,8 @@
     <br/>
     <br/>
 
+    <p>黑名单</p>
     <table>
-        <p>黑名单</p>
         <tr>
             <th>用户名</th>
             <th>解封时间</th>
@@ -98,7 +101,7 @@
         %>
         <tr>
             <td><%=darkUser.getDarkName()%></td>
-            <td><%=darkUser.getUnblockTime()%></td>
+            <td><%=DateUtils.conversionDate(darkUser.getUnblockTime())%></td>
             <td><a href="#">解封</a></td>
         </tr>
         <%

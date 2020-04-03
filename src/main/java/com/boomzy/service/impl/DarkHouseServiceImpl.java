@@ -34,4 +34,19 @@ public class DarkHouseServiceImpl implements DarkHouseService {
         logger.info("service-showDarkUser end");
         return darkUsers;
     }
+
+    @Override
+    public int addUserInDarkHouse(DarkUser darkUser) {
+        logger.info("service-addUserInDarkHouse start");
+        int result = 0;
+        if (null != darkUser) {
+            result = darkHouseDao.addUserInDarkHouse(darkUser);
+            if (result == 1) {
+                logger.info("service-addUserInDarkHouse success");
+            } else {
+                logger.info("service-addUserInDarkHouse failed");
+            }
+        }
+        return result;
+    }
 }

@@ -6,6 +6,7 @@ import com.boomzy.service.AdminService;
 import com.boomzy.service.DarkHouseService;
 import com.boomzy.service.PostService;
 import com.boomzy.service.SensitiveWordService;
+import com.boomzy.util.DateUtils;
 import com.boomzy.util.RandomUtils;
 import com.boomzy.validation.GameSectionValidation;
 import com.boomzy.validation.OpinionValidation;
@@ -342,6 +343,7 @@ public class AdminController {
         logger.info("controller-showUsers start");
         // 展示所有用户
         List<User> users = adminService.showUsers();
+        // 展示黑名单用户
         List<DarkUser> darkUsers = darkHouseService.showDarkUser();
         if (null != users && null != darkUsers) {
             logger.info("controller-showUsers success");
@@ -376,6 +378,34 @@ public class AdminController {
             throw new RuntimeException("deleteUser error");
         }
         logger.info("controller-deleteUser end");
+    }
+
+    /**
+     * 用户封号
+     *
+     * @param username
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/addUserInDarkHouse")
+    public void addUserInDarkHouse(String username, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        logger.info("controller-addUserInDarkHouse start");
+        DarkUser darkUser = new DarkUser();
+        darkUser.setDarkName(username);
+        darkUser.setUnblockTime(DateUtils.getThirtyDaysLater(new Date()));
+        darkUser.setCreateTime(new Date());
+        darkUser.setUpdateTime(new Date());
+        int result = darkHouseService.addUserInDarkHouse(darkUser);
+        if (result == 1) {
+            logger.info("controller-addUserInDarkHouse success");
+            // 封号成功后，重新查询用户
+            showUsers(request, response);
+        } else {
+            logger.info("controller-addUserInDarkHouse failed");
+            logger.info("controller-addUserInDarkHouse end");
+            throw new RuntimeException("addUserInDarkHouse error");
+        }
+        logger.info("controller-addUserInDarkHouse end");
     }
 
 }

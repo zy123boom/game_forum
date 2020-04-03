@@ -16,4 +16,10 @@
         select * from
         t_forum_dark_house
     </select>
+
+    <insert id="addUserInDarkHouse" parameterType="com.boomzy.domain.DarkUser">
+        insert into
+        t_forum_dark_house(dark_name, unblock_time, create_time, update_time)
+        values(#{darkName}, #{unblockTime}, #{createTime}, #{updateTime})
+    </insert>
 </mapper>
