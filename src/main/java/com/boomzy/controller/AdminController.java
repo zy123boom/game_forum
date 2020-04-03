@@ -408,4 +408,26 @@ public class AdminController {
         logger.info("controller-addUserInDarkHouse end");
     }
 
+    /**
+     * 用户解封
+     *
+     * @param darkName
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/deleteFromDarkHome")
+    public void deleteFromDarkHome(String darkName, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        logger.info("controller-deleteFromDarkHome start");
+        int result = darkHouseService.deleteFromDarkHome(darkName);
+        if (result == 1) {
+            logger.info("controller-deleteFromDarkHome success");
+            // 解封成功后，重新查询用户
+            showUsers(request, response);
+        } else {
+            logger.info("controller-deleteFromDarkHome failed");
+            logger.info("controller-deleteFromDarkHome end");
+            throw new RuntimeException("deleteFromDarkHome error");
+        }
+        logger.info("controller-deleteFromDarkHome end");
+    }
 }

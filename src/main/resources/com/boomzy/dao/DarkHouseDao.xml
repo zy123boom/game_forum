@@ -22,4 +22,10 @@
         t_forum_dark_house(dark_name, unblock_time, create_time, update_time)
         values(#{darkName}, #{unblockTime}, #{createTime}, #{updateTime})
     </insert>
+
+    <delete id="deleteFromDarkHome" parameterType="string">
+        delete from
+        t_forum_dark_house
+        where dark_name = #{darkName}
+    </delete>
 </mapper>

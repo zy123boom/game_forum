@@ -20,5 +20,19 @@ public interface DarkHouseDao {
      */
     List<DarkUser> showDarkUser();
 
+    /**
+     * 用户封号
+     *
+     * @param darkUser
+     * @return
+     */
     int addUserInDarkHouse(DarkUser darkUser);
+
+    /**
+     * 用户解封
+     *
+     * @param darkName
+     * @return
+     */
+    int deleteFromDarkHome(String darkName);
 }

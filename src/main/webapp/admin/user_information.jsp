@@ -102,7 +102,7 @@
         <tr>
             <td><%=darkUser.getDarkName()%></td>
             <td><%=DateUtils.conversionDate(darkUser.getUnblockTime())%></td>
-            <td><a href="#">解封</a></td>
+            <td><a href="../admin/deleteFromDarkHome?darkName=<%=darkUser.getDarkName()%>">解封</a></td>
         </tr>
         <%
             }

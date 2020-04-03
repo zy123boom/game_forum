@@ -24,4 +24,12 @@ public interface DarkHouseService {
      * @return
      */
     int addUserInDarkHouse(DarkUser darkUser);
+
+    /**
+     * 用户解封
+     *
+     * @param darkName
+     * @return
+     */
+    int deleteFromDarkHome(String darkName);
 }

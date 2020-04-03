@@ -49,4 +49,20 @@ public class DarkHouseServiceImpl implements DarkHouseService {
         }
         return result;
     }
+
+    @Override
+    public int deleteFromDarkHome(String darkName) {
+        logger.info("service-deleteFromDarkHome start");
+        int result = 0;
+        if (null != darkName) {
+            result = darkHouseDao.deleteFromDarkHome(darkName);
+            if (result == 1) {
+                logger.info("service-deleteFromDarkHome success");
+            } else {
+                logger.info("service-deleteFromDarkHome start");
+            }
+        }
+        logger.info("service-deleteFromDarkHome end");
+        return result;
+    }
 }
