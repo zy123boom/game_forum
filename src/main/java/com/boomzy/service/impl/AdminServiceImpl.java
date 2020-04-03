@@ -181,4 +181,9 @@ public class AdminServiceImpl implements AdminService {
         return result;
 
     }
+
+    @Override
+    public int checkSensitiveWord(String postContent) {
+        return 0;
+    }
 }

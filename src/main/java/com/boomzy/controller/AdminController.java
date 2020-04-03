@@ -192,7 +192,7 @@ public class AdminController {
         List<Post> posts = postService.showPost(gameSectionName);
         // 查敏
         for (Post post : posts) {
-            if (sensitiveWordService.checkSensitiveWord(post.getPostContent()) > 0) {
+            if (adminService.checkSensitiveWord(post.getPostContent()) > 0) {
                 // 敏感帖子，删帖
                 adminService.deletePostByPostId(post.getPostId());
             }

@@ -122,4 +122,12 @@ public interface AdminService {
      * @return
      */
     int deleteUser(String username);
+
+    /**
+     * 检测敏感词
+     *
+     * @param postContent
+     * @return 如果有敏感词，返回结果大于等于0
+     */
+    int checkSensitiveWord(String postContent);
 }
