@@ -1,7 +1,8 @@
 <%@ page import="com.boomzy.domain.User" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.boomzy.util.DateUtils" %>
-<%@ page import="com.boomzy.enums.UserTypeEnum" %><%--
+<%@ page import="com.boomzy.enums.UserTypeEnum" %>
+<%@ page import="com.boomzy.domain.DarkUser" %><%--
   Created by IntelliJ IDEA.
   User: boomzy
   Date: 2020/4/1
@@ -38,6 +39,7 @@
 </head>
 <body>
     <table>
+        <p>所有用户</p>
         <tr>
             <th>用户名</th>
             <th>真实姓名</th>
@@ -47,6 +49,7 @@
             <th>城市</th>
             <th>注册时间</th>
             <th>是否失效</th>
+            <th>封号</th>
         </tr>
         <%
             List<User> users = (List<User>)request.getAttribute("users");
@@ -71,6 +74,32 @@
             <%
                 }
             %>
+            <td><a href="../admin/addUserInDarkHouse?username=<%=user.getUserName()%>">封号</a></td>
+        </tr>
+        <%
+            }
+        %>
+    </table>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <table>
+        <p>黑名单</p>
+        <tr>
+            <th>用户名</th>
+            <th>解封时间</th>
+            <th>解封</th>
+        </tr>
+        <%
+            List<DarkUser> darkUsers = (List<DarkUser>)request.getAttribute("darkUsers");
+            for (DarkUser darkUser : darkUsers) {
+        %>
+        <tr>
+            <td><%=darkUser.getDarkName()%></td>
+            <td><%=darkUser.getUnblockTime()%></td>
+            <td><a href="#">解封</a></td>
         </tr>
         <%
             }

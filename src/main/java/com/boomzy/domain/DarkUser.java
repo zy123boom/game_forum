@@ -19,12 +19,10 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DarkHouse implements Serializable {
+public class DarkUser implements Serializable {
     private BigInteger id;
     // 黑名单用户名
     private String darkName;
-    private String darkPostId;
-    private String darkPostSubject;
     private Date unblockTime;
     private Date createTime;
     private Date updateTime;

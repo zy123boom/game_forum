@@ -3,6 +3,7 @@ package com.boomzy.controller;
 import com.boomzy.domain.*;
 import com.boomzy.enums.LoginEnum;
 import com.boomzy.service.AdminService;
+import com.boomzy.service.DarkHouseService;
 import com.boomzy.service.PostService;
 import com.boomzy.service.SensitiveWordService;
 import com.boomzy.util.RandomUtils;
@@ -48,6 +49,8 @@ public class AdminController {
     @Autowired
     private SensitiveWordService sensitiveWordService;
 
+    @Autowired
+    private DarkHouseService darkHouseService;
     /**
      * 管理员登录
      *
@@ -337,10 +340,13 @@ public class AdminController {
     @RequestMapping("/showUsers")
     public void showUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("controller-showUsers start");
+        // 展示所有用户
         List<User> users = adminService.showUsers();
-        if (null != users) {
+        List<DarkUser> darkUsers = darkHouseService.showDarkUser();
+        if (null != users && null != darkUsers) {
             logger.info("controller-showUsers success");
             request.setAttribute("users", users);
+            request.setAttribute("darkUsers", darkUsers);
             request.getRequestDispatcher("/admin/user_information.jsp").forward(request, response);
         } else {
             logger.info("controller-showUsers failed");
@@ -371,4 +377,5 @@ public class AdminController {
         }
         logger.info("controller-deleteUser end");
     }
+
 }

@@ -133,6 +133,9 @@
         select *
         from t_forum_user
         where user_type in ('01', '04')
+        and user_name not in
+        (select dark_name
+         from t_forum_dark_house)
     </select>
 
     <delete id="deleteUser" parameterType="string">
