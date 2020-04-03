@@ -36,7 +36,6 @@
 
         .back-forum-home a {
             text-decoration: none;
-            margin-left: 32%;
         }
     </style>
 </head>
