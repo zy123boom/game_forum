@@ -28,7 +28,7 @@
         from t_forum_user
         where user_name = #{username}
         and password = #{password}
-        and user_type = '01'
+        and user_type in ('01', '03')
     </select>
 
     <insert id="register" parameterType="com.boomzy.domain.User">
