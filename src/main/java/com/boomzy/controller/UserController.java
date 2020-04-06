@@ -98,14 +98,17 @@ public class UserController {
         String confirmPassword = request.getParameter("confirmPassword");
         if (!UserValidation.registerValidation(user, confirmPassword)) {
             logger.info("controller-注册验证失败");
-            response.sendRedirect("register_fail.jsp");
+            request.setAttribute("failmsg", "注册验证失败");
+//            response.sendRedirect("register_fail.jsp");
+            request.getRequestDispatcher("/user/register_fail.jsp").forward(request, response);
             return;
         }
         // 查询用户名是否重复
         int count = userService.queryUserNameCount(user.getUserName());
         if (count >= 1) {
             logger.info("controller-注册失败，用户名重复");
-            response.sendRedirect("register_fail.jsp");
+            request.setAttribute("failmsg", "用户名重复");
+            request.getRequestDispatcher("/user/register_fail.jsp").forward(request, response);
             return;
         }
         user.setUserType(UserTypeEnum.NORMAL_USER.getCode());
@@ -119,7 +122,8 @@ public class UserController {
         }
         if (result == RegisterEnum.REGISTER_FAIL.getCode()) {
             logger.info("controller-注册信息不合法");
-            response.sendRedirect("register_fail.jsp");
+            request.setAttribute("failmsg", "注册信息不合法");
+            request.getRequestDispatcher("/user/register_fail.jsp").forward(request, response);
             return;
         }
         logger.info("controller-注册功能结束");
@@ -141,14 +145,16 @@ public class UserController {
         if (!(UserValidation.genericValidation(username) && UserValidation.genericValidation(oldPassword)
             && UserValidation.genericValidation(newPassword) && UserValidation.genericValidation(confirmPassword))) {
             logger.info("controller-修改密码功能失败，参数校验不合法");
-            response.sendRedirect("update_password_fail.jsp");
+            request.setAttribute("failmsg", "参数校验不合法");
+            request.getRequestDispatcher("/user/update_password_fail.jsp").forward(request, response);
             logger.info("controller-修改密码功能结束");
             return;
         }
 
         if (!newPassword.equals(confirmPassword)) {
             logger.info("controller-修改密码失败，密码验证不一致");
-            response.sendRedirect("update_password_fail.jsp");
+            request.setAttribute("failmsg", "两次输入密码不一致");
+            request.getRequestDispatcher("/user/update_password_fail.jsp").forward(request, response);
             logger.info("controller-修改密码功能结束");
             return;
         }
@@ -156,7 +162,8 @@ public class UserController {
         int loginResult = userService.login(username, oldPassword);
         if (loginResult != LoginEnum.SUCCESS.getCode()) {
             logger.info("controller-修改密码失败，账户密码错误");
-            response.sendRedirect("update_password_fail.jsp");
+            request.setAttribute("failmsg", "账户密码错误");
+            request.getRequestDispatcher("/user/update_password_fail.jsp").forward(request, response);
             logger.info("controller-修改密码功能结束");
             return;
         }

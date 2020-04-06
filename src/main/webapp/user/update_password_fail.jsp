@@ -11,6 +11,10 @@
     <title>修改密码失败</title>
 </head>
 <body>
-    修改密码失败
+    修改密码失败<br/>
+    <%
+        String failmsg = (String)request.getAttribute("failmsg");
+        out.println(failmsg);
+    %>
 </body>
 </html>

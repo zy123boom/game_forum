@@ -152,7 +152,8 @@ public class PostController {
         logger.info("controller-新增评论功能开始");
         if (!PostValidation.addCommentValidate(commentContent)) {
             logger.info("controller-新增评论功能-内容校验不合法");
-            response.sendRedirect("/game_forum/user/add_comment_fail.jsp");
+            request.setAttribute("failmsg", "请输入评论");
+            request.getRequestDispatcher("/user/add_comment_fail.jsp").forward(request, response);
             return;
         }
 

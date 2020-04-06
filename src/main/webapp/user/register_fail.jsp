@@ -11,7 +11,11 @@
     <title>注册失败</title>
 </head>
 <body>
-    注册失败，输入信息不合法
+    注册失败<br/>
+    <%
+        String failmsg = (String)request.getAttribute("failmsg");
+        out.println(failmsg);
+    %>
     <a href="/game_forum/register.jsp">重新注册</a>
 </body>
 </html>

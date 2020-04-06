@@ -11,6 +11,10 @@
     <title>新增评论失败</title>
 </head>
 <body>
-    评论失败
+    评论失败<br/>
+    <%
+        String failmsg = (String)request.getAttribute("failmsg");
+        out.println(failmsg);
+    %>
 </body>
 </html>
