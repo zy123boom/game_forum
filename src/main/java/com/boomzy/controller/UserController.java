@@ -53,7 +53,8 @@ public class UserController {
 //        String password = request.getParameter("password");
         if (!UserValidation.loginValidation(username, password)) {
             logger.info("controller-用户名或密码不合法");
-            response.sendRedirect("login_fail.jsp");
+            request.setAttribute("failmsg", "用户名或密码不合法");
+            request.getRequestDispatcher("/user/login_fail.jsp").forward(request, response);
             return;
         }
         int loginResult = userService.login(username, password);
@@ -69,12 +70,14 @@ public class UserController {
         }
         if (loginResult == LoginEnum.LOGIN_FAIL.getCode()) {
             logger.info("controller-用户名或密码错误");
-            response.sendRedirect("login_fail.jsp");
+            request.setAttribute("failmsg", "用户名或密码错误");
+            request.getRequestDispatcher("/user/login_fail.jsp").forward(request, response);
             logger.info("controller层登陆功能结束");
             return;
         }
         if (loginResult == LoginEnum.USER_IN_DARK.getCode()) {
             logger.info("controller-用户已被封号");
+            request.setAttribute("failmsg", "用户已被封号");
             response.sendRedirect("user_blocked.jsp");
             logger.info("controller层登陆功能结束");
             return;

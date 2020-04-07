@@ -51,8 +51,14 @@ public class PostServiceImpl implements PostService {
     @Override
     public String showPostContent(String postId) {
         logger.info("service-展示讨论帖内容功能开始");
+        String content =  postDao.showPostContent(postId);
+        if (null != content) {
+            logger.info("service-展示讨论帖内容功能成功");
+        } else {
+            logger.info("service-展示讨论帖内容功能失败");
+        }
         logger.info("service-展示讨论帖内容功能结束");
-        return postDao.showPostContent(postId);
+        return content;
     }
 
     @Override

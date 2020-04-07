@@ -9,7 +9,8 @@
     <title>用户已被封号</title>
 </head>
 <body>
-登陆失败，用户已被封号，点击登录页返回登陆页面
+登陆失败，用户已被封号<br/>
+点击登录页返回登陆页面
 <a href="/game_forum/login.jsp">登录页</a>
 </body>
 </html>

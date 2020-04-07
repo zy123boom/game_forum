@@ -5,7 +5,13 @@
 </head>
 <body>
 <body>
-    登陆失败，用户名或密码有误或不合法，点击登录页返回登陆页面<br/>
+    登陆失败<br/>
+    <%
+        String failmsg = (String)request.getAttribute("failmsg");
+        out.print(failmsg);
+    %>
+    <br/>
+    点击登录页返回登陆页面
     <a href="/game_forum/login.jsp">登录页</a>
 </body>
 </body>
