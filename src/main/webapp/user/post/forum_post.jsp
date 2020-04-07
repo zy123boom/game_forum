@@ -94,15 +94,16 @@
         }
     %>
 
+
+    <%
+        if (!session.getAttribute("username").equals("tourist")) {
+    %>
     <div class="back-forum-home">
-        <%
-            if (!session.getAttribute("username").equals("tourist")) {
-        %>
         <a href="../user/post/add_post.jsp">发表新帖</a><br/>
-        <%
-            }
-        %>
     </div>
+    <%
+        }
+    %>
 
     <div class="back-forum-home">
         <a href="../user/login?username=<%=session.getAttribute("username")%>&password=<%=session.getAttribute("password")%>">返回主页面</a>
