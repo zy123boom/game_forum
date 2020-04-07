@@ -16,7 +16,7 @@
 
                 <div class="login-group login-password">
                     密码：<input type="password" name="password" class="login-input"/>
-                    <a href="user/update_password.jsp">忘记密码？</a>
+                    <a href="user/forget_password.jsp">忘记密码？</a>
                 </div>
 
                 <div class="login-group login-submit">

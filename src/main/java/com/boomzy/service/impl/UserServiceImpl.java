@@ -90,4 +90,30 @@ public class UserServiceImpl implements UserService {
         logger.info("service-修改密码功能结束");
         return result;
     }
+
+    @Override
+    public int updatePasswordByUsername(String username, String newPassword) {
+        logger.info("service-根据username修改密码功能开始");
+        int result = userDao.updatePasswordByUsername(username, newPassword);
+        if (result == 1) {
+            logger.info("service-根据username修改密码成功");
+        } else {
+            logger.info("service-根据username修改密码功能失败");
+        }
+        logger.info("service-根据username修改密码功能结束");
+        return result;
+    }
+
+    @Override
+    public int queryUserByUserName(String username) {
+        logger.info("service-查询用户功能开始");
+        int res = userDao.queryUserByUserName(username);
+        if (res >= 1) {
+            logger.info("service-查询用户成功");
+        } else {
+            logger.info("service-查询用户失败");
+        }
+        logger.info("service-查询用户功能结束");
+        return res;
+    }
 }

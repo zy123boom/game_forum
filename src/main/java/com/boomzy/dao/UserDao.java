@@ -64,4 +64,21 @@ public interface UserDao {
      */
     int updatePassword(@Param("username") String username, @Param("oldPassword") String oldPassword,
                        @Param("newPassword") String newPassword);
+
+    /**
+     * 根据username修改密码
+     *
+     * @param username
+     * @param newPassword
+     * @return
+     */
+    int updatePasswordByUsername(@Param("username") String username, @Param("newPassword") String newPassword);
+
+    /**
+     * 查询用户
+     *
+     * @param username
+     * @return
+     */
+    int queryUserByUserName(String username);
 }

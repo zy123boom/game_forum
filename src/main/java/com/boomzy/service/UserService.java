@@ -51,4 +51,21 @@ public interface UserService {
      * @return
      */
     int updatePassword(String username, String oldPassword, String newPassword);
+
+    /**
+     * 根据username修改密码
+     *
+     * @param username
+     * @param newPassword
+     * @return
+     */
+    int updatePasswordByUsername(String username, String newPassword);
+
+    /**
+     * 查询用户
+     *
+     * @param username
+     * @return
+     */
+    int queryUserByUserName(String username);
 }

@@ -58,4 +58,17 @@
         where user_name = #{username}
         and password = #{oldPassword}
     </update>
+
+    <update id="updatePasswordByUsername">
+        update
+        t_forum_user
+        set password = #{newPassword}
+        where user_name = #{username}
+    </update>
+
+    <select id="queryUserByUserName" parameterType="string" resultType="int">
+        select count(id)
+        from t_forum_user
+        where user_name = #{username}
+    </select>
 </mapper>
