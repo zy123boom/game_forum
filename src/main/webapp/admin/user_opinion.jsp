@@ -11,7 +11,9 @@
 <html>
 <head>
     <title>用户意见展示</title>
-    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
         body {
             background-color: rgb(216,235,249);
@@ -36,7 +38,8 @@
     </style>
 </head>
 <body>
-    <table border="1px">
+<div class="container">
+    <table class="table table-striped">
         <tr>
             <th>意见发表人</th>
             <th>意见内容</th>
@@ -63,13 +66,24 @@
                 }
             %>
             <td><%=DateUtils.conversionDate(opinion.getCreateTime())%></td>
+            <%
+                if (null == opinion.getOpinionReply()) {
+            %>
             <td><a href="../admin/opinion_reply.jsp?opinionId=<%=opinion.getOpinionId()%>">回复意见</a> </td>
+            <%
+                } else {
+            %>
+            <td>意见已回复</td>
+            <%
+                }
+            %>
         </tr>
         <%
 
             }
         %>
     </table>
+</div>
 
     <div class="back-forum-home">
         <a href="../admin/login?username=<%=session.getAttribute("username")%>&password=<%=session.getAttribute("password")%>">返回主页面</a>

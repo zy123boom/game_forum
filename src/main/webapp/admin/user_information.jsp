@@ -13,7 +13,9 @@
 <html>
 <head>
     <title>用户管理（用户信息）</title>
-    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
         body {
             margin: 0;
@@ -40,8 +42,10 @@
     </style>
 </head>
 <body>
-    <p>所有用户</p>
-    <table>
+
+    <div class="container">
+        <table class="table table-striped">
+            <caption><h3>所有用户</h3></caption>
         <tr>
             <th>用户名</th>
             <th>真实姓名</th>
@@ -82,13 +86,15 @@
             }
         %>
     </table>
+    </div>
 
     <br/>
     <br/>
     <br/>
 
-    <p>黑名单</p>
-    <table>
+    <div class="container">
+        <table class="table table-striped">
+            <caption><h3>黑名单</h3></caption>
         <tr>
             <th>用户名</th>
             <th>解封时间</th>
@@ -107,6 +113,7 @@
             }
         %>
     </table>
+    </div>
 
     <div class="back-forum-home">
         <a href="../admin/login?username=<%=session.getAttribute("username")%>&password=<%=session.getAttribute("password")%>">返回主页面</a>

@@ -10,7 +10,9 @@
 <head>
     <title>论坛主页面（管理员）</title>
     <link rel="stylesheet" type="text/css" href="../css/home.css">
-    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
         .add-game-section {
             height: 300px;
@@ -109,7 +111,8 @@
         <div class="major-one image-right">
         </div>
     </div>
-    <table border="1px">
+    <div class="container">
+        <table class="table table-striped">
         <tr>
             <th>游戏模块名</th>
             <th>修改游戏模块名选项</th>
@@ -130,6 +133,7 @@
             }
         %>
     </table>
+    </div>
 
     <div class="add-game-section">
         <div class="add-box">

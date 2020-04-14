@@ -5,7 +5,10 @@
 <html>
 <head>
     <title>板块讨论帖</title>
-    <link rel="stylesheet" type="text/css" href="../css/table.css">
+<%--    <link rel="stylesheet" type="text/css" href="../css/table.css">--%>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
         body {
             margin: 0;
@@ -29,15 +32,16 @@
     </style>
 </head>
 <body>
-    <p>帖子列表</p>
-    <table border="1px">
+
+    <div class="container">
+    <table class="table table-striped">
+        <caption><h3>帖子列表</h3></caption>
         <tr>
             <th>帖子标题</th>
             <th>帖子作者</th>
             <th>浏览量</th>
             <th>评论数</th>
             <th>发布时间</th>
-            <th>更新时间</th>
         </tr>
 
         <%
@@ -51,12 +55,12 @@
             <td><%=post.getViewCount()%></td>
             <td><%=post.getCommentCount()%></td>
             <td><%=DateUtils.conversionDate(post.getCreateTime())%></td>
-            <td><%=DateUtils.conversionDate(post.getUpdateTime())%></td>
         </tr>
         <%
             }
         %>
     </table>
+    </div>
 
     <br/>
     <br/>
@@ -66,8 +70,9 @@
         List<Post> hotPosts = (List<Post>)session.getAttribute("hotPosts");
         if (hotPosts.size() > 0) {
     %>
-    <table>
-        <p>热帖列表</p>
+    <div class="container">
+    <table class="table table-striped">
+        <caption><h3>热帖列表</h3></caption>
         <tr>
             <th>帖子标题</th>
             <th>帖子作者</th>
@@ -90,9 +95,11 @@
             }
         %>
     </table>
+    </div>
     <%
         }
     %>
+
 
 
     <%

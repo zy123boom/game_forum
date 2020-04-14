@@ -11,7 +11,9 @@
 <html>
 <head>
     <title>所有回复信息</title>
-    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
         .back-post-content {
             background-color: skyblue;
@@ -31,7 +33,8 @@
     </style>
 </head>
 <body>
-    <table border="1px">
+<div class="container">
+    <table class="table table-striped">
 
         <tr>
             <th>回复内容</th>
@@ -51,6 +54,7 @@
             }
         %>
     </table>
+    </div>
 
     <div class="back-post-content">
         <a href="../post/showPost?gameSectionName=<%=session.getAttribute("gameSectionName")%>">返回帖子列表</a>

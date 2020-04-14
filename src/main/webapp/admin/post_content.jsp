@@ -6,7 +6,9 @@
 <head>
     <title>板块讨论帖</title>
     <link rel="stylesheet" type="text/css" href="../css/post_content.css">
-    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="post-content">
@@ -25,7 +27,8 @@
 
     <hr/>
     <%--帖子评论信息--%>
-    <table border="1px">
+    <div class="container">
+        <table class="table table-striped">
         <tr>
             <th>评论作者</th>
             <th>评论内容</th>
@@ -51,6 +54,7 @@
         <%
             }
         %>
-    </table>
+        </table>
+    </div>
 </body>
 </html>

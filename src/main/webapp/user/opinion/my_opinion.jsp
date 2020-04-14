@@ -11,7 +11,9 @@
 <html>
 <head>
     <title>我提出的意见</title>
-    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
         body {
             background-color: rgb(216,235,249);
@@ -37,7 +39,8 @@
 </head>
 <body>
     <%--展示我提出的意见--%>
-    <table>
+    <div class="container">
+        <table class="table table-striped">
         <tr>
             <th>意见内容</th>
             <th>意见回复</th>
@@ -65,7 +68,8 @@
         <%
             }
         %>
-    </table>
+        </table>
+    </div>
 
     <div class="back-forum-home">
         <a href="../user/login?username=<%=session.getAttribute("username")%>&password=<%=session.getAttribute("password")%>">返回主页面</a>

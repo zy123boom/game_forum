@@ -12,7 +12,9 @@
 <html>
 <head>
     <title>讨论帖展示</title>
-    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
         body {
             margin: 0;
@@ -24,7 +26,8 @@
     </style>
 </head>
 <body>
-    <table border="1px">
+<div class="container">
+    <table class="table table-striped">
         <tr>
             <th>帖子编号</th>
             <th>帖子标题</th>
@@ -66,6 +69,7 @@
             }
         %>
     </table>
+</div>
     <br/>
     <a href="../admin/login?username=<%=session.getAttribute("username")%>&password=<%=session.getAttribute("password")%>">返回主页面</a>
 </body>
