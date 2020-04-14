@@ -47,7 +47,8 @@ public class UserController {
      * @throws ServletException
      */
     @RequestMapping("/login")
-    public void login(String username, String password, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void login(String username, String password, HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
         logger.info("controller层登陆功能开始");
 //        String username = request.getParameter("userName");
 //        String password = request.getParameter("password");
@@ -96,13 +97,13 @@ public class UserController {
      * @throws ServletException
      */
     @RequestMapping("/register")
-    public void register(User user, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void register(User user, HttpServletRequest request, HttpServletResponse response) throws
+            IOException, ServletException {
         logger.info("controller层注册功能开始");
         String confirmPassword = request.getParameter("confirmPassword");
         if (!UserValidation.registerValidation(user, confirmPassword)) {
             logger.info("controller-注册验证失败");
             request.setAttribute("failmsg", "注册验证失败");
-//            response.sendRedirect("register_fail.jsp");
             request.getRequestDispatcher("/user/register_fail.jsp").forward(request, response);
             return;
         }

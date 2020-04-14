@@ -151,7 +151,8 @@ public class AdminController {
      * @param response
      */
     @RequestMapping("/addGameSectionName")
-    public void addGameSectionName(String gameSectionName, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void addGameSectionName(String gameSectionName, HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
         logger.info("controller-addGameSectionName start");
         if (gameSectionName == null || StringUtils.isBlank(gameSectionName)) {
             logger.info("controller-addGameSectionName failed, parameter valid is illegal");
